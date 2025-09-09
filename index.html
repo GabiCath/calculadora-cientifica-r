@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0a0f22">
+</head>
+<body>
+<main class="wrap">
+<header class="topbar">
+<h1>CALCULADORA</h1>
+<div class="actions">
+<button id="themeToggle" class="btn ghost">Tema</button>
+<button id="historyToggle" class="btn ghost">Histórico</button>
+<button id="sciToggle" class="btn ghost">Modo Científico</button>
+<button id="normalToggle" class="btn ghost">Modo Normal</button>
+<button id="modeToggle" class="btn ghost">Graus</button>
+<button id="downloadBtn" class="btn">Download</button>
+</div>
+</header>
+<section class="calc-card" id="card">
+<div class="display-row">
+<input id="display" class="display" type="text" inputmode="decimal" autocomplete="off" spellcheck="false">
+<div class="display-actions">
+<button id="copyBtn" class="btn small ghost">Copiar</button>
+</div>
+</div>
+<div class="keypad basic" id="keypad-basic">
+<button data-key="%" class="key util">%</button>
+<button data-key="(" class="key util">(</button>
+<button data-key=")" class="key util">)</button>
+<button data-action="clear" class="key danger">C</button>
+<button data-action="backspace" class="key danger">⌫</button>
+<button data-key="/" class="key op">÷</button>
+<button data-key="7" class="key">7</button>
+<button data-key="8" class="key">8</button>
+<button data-key="9" class="key">9</button>
+<button data-key="*" class="key op">×</button>
+<button data-key="4" class="key">4</button>
+<button data-key="5" class="key">5</button>
+<button data-key="6" class="key">6</button>
+<button data-key="-" class="key op">−</button>
+<button data-key="1" class="key">1</button>
+<button data-key="2" class="key">2</button>
+<button data-key="3" class="key">3</button>
+<button data-key="+" class="key op">+</button>
+<button data-action="sign" class="key util">±</button>
+<button data-key="0" class="key zero">0</button>
+<button data-key="." class="key">.</button>
+<button data-action="equals" class="key equals">=</button>
+</div>
+<div class="keypad sci hidden" id="keypad-sci">
+<button data-func="sin" class="key func">sin</button>
+<button data-func="cos" class="key func">cos</button>
+<button data-func="tan" class="key func">tan</button>
+<button data-func="sqrt" class="key func">√</button>
+<button data-func="pow" class="key func">xʸ</button>
+<button data-func="log" class="key func">log</button>
+<button data-func="ln" class="key func">ln</button>
+<button data-func="pi" class="key func">π</button>
+<button data-func="e" class="key func">e</button>
+<button data-func="fact" class="key func">n!</button>
+</div>
+</section>
+<aside class="history hidden" id="history">
+<h2>Histórico</h2>
+<ul id="historyList"></ul>
+<button id="clearHistory" class="btn ghost">Limpar histórico</button>
+</aside>
+</main>
+<script src="script.js"></script>
+<script src="tests.js"></script>
+<script>
+if("serviceWorker" in navigator){navigator.serviceWorker.register("service-worker.js")}
+</script>
+</body>
+</html>
